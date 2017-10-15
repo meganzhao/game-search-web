@@ -1,2 +1,2 @@
 ## Game!
-Detailed game descrition is included in README.html file. 
+Detailed game description is included in README.html file. 
