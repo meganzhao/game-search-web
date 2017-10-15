@@ -1,0 +1,34 @@
+
+legend{
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input[type=radio]{
+    font-size: 16px;
+}
+
+a{
+    font-size: 22px;
+    text-decoration: none;
+}
+
+#search_result a{
+    color: saddlebrown;
+    font-size: 25px;
+}
+
+li{
+    color: #404040;
+}
+
+p{
+    text-indent: 1cm;
+    font-size: 18px;
+    color:black;
+}
+
+footer{
+    position: relative;
+}

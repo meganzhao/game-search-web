@@ -1,0 +1,59 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> {{ target_game.name }} </title>
+{% endblock %}
+
+{% block stylesheet %}\
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_productPage.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div id="main_content">
+        <h1>{{ target_game.name }}</h1>
+        <ul id="product_info">
+            <li>● Supported Platform:&nbsp&nbsp{{ target_game.platform }}</li>
+            <li>● Year of Release:&nbsp&nbsp{{ target_game.yearofrelease }}</li>
+            <li>● Genre:&nbsp&nbsp{{ target_game.genre }}</li>
+            <li>● Publisher:&nbsp&nbsp{{ target_game.publisher }}</li>
+            <li>● Sale Record worldwide: &nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbspNorth America-&nbsp&nbsp{{ target_game.nasales|string}},
+                <br>&nbsp&nbsp&nbsp&nbspEurope-&nbsp&nbsp{{ target_game.eusales|string}},
+                <br>&nbsp&nbsp&nbsp&nbspJapan-&nbsp&nbsp{{ target_game.jpsales | string}},
+                <br>&nbsp&nbsp&nbsp&nbspOther Places-&nbsp&nbsp{{ target_game.othersales|string }}</li>
+            <li>● Critique Score:&nbsp&nbsp {{ target_game.criticscore |string}}
+            <br><p id="score_count">（num of critiques:&nbsp&nbsp{{ target_game.criticcount|string}})</p> </li>
+            <li>● User Score: &nbsp&nbsp{{ target_game.userscore }}
+            <br><p id="score_count"> &nbsp&nbsp&nbsp&nbsp(num of users:{{ target_game.usercount|string}})</p></li>
+            <li>● Developer Info: &nbsp&nbsp{{ target_game.developer }} </li>
+            <li>● ESBR Rating: &nbsp&nbsp{{ target_game.rating }} </li>
+        </ul>
+    </div>
+
+    <div id="sidebar">
+        <aside>
+        <div id="similar_games">
+        <fieldset>
+            <p style="font-size: 18px; font-weight: bold;">Similar Games:</p>
+            <ul id="similar_games" >
+                {% for game in similar_game %}
+                    <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.platform)}}">
+                        {{ game.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+        </div>
+        <div id="games_by_same_publisher">
+            <fieldset>
+                <p style="font-size: 18px; font-weight: bold;">Games by the same publisher:</p>
+                <ul id="games_by_same_developer">
+                    {% for game in same_publisher %}
+                    <li><a href="{{ url_for('product', game_name=game.name, game_platform=game.platform)}}">
+                        {{ game.name }}</a></li>
+                {% endfor %}
+                </ul>
+            </fieldset>
+        </div>
+        </aside>
+    </div>
+{% endblock %}

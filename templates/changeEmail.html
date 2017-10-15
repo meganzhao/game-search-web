@@ -1,0 +1,43 @@
+{% extends "basic.html" %}
+
+{% block title %}
+    <title> Change Your Email </title>
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_changeEmail.css')}}">
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ url_for('static',filename='changeEmail.js')}}"></script>
+{% endblock %}
+
+{% block functions %}
+{% endblock %}
+
+{% block global_navigation %}
+{% endblock %}
+
+{% block content %}
+<div id="content">
+<h2> <u> Change Your Email Address </u></h2>
+<section id="change_email">
+    <p>Please enter your user name:
+    <input type="text"><br>
+    </p>
+    <p> Please enter your password:
+    <input type="password"><br>
+    </p>
+    <p> Please enter your new email address:
+    <input id="new_email" type="text" style="width:175px"><br>
+    </p>
+    <p> Re-enter the new email address:
+    <input type="text" style="width:175px"> </p>
+    <button onclick="confirmChange()">Submit</button>
+    <script type="text/javascript">
+        var account_with_new_email = "{{ url_for('accountHome', account_name='NOTANAME')}}"
+    </script>
+</section>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+footer{
+    position: relative;
+}
+
+#best_seller a{
+    font-size: 25px;
+    columns: 3;
+}

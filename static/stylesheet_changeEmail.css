@@ -1,0 +1,26 @@
+.displayed{
+    float: none;
+    margin-left:38%;
+}
+section {
+    width: 100%;
+    border: dashed;
+    text-align: center;
+    font-weight:bold;
+    height: 190px;
+}
+
+input[type=text]{
+    border-radius: 3px;
+    opacity:0.8;
+}
+
+
+button{
+    font-family: Serif;
+    font-size:16px;
+}
+
+footer{
+    margin-left: 4%;
+}

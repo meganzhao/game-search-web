@@ -1,0 +1,63 @@
+
+h2{
+    margin-bottom: 10px;
+}
+
+section{
+    width:100%;
+}
+
+#account p{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#account input{
+    opacity: 0.8;
+}
+
+#switch_account{
+    font-size: 30px;
+    font-family: sans-serif;
+    opacity: 0.8;
+    border-top: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1px;
+    float: right;
+}
+#functions_container{
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+    top:30px;
+    font-size: 13px;
+}
+#global_search_container{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 10px;
+    float: right;
+}
+
+#my_favorite{
+    color: #000000;
+	list-style-type: none;
+    width: 100%;
+    overflow: hidden;
+    font-family:sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+    line_height: 15px;
+    columns: 3;
+}
+
+#recommended_games{
+    color: black;
+    list-style-type: none;
+    width: 100%;
+    overflow: hidden;
+    font-family:sans-serif, 'Britannic Bold';
+    opacity: 0.8;
+    line_height: 15px;
+    columns: 3;
+}

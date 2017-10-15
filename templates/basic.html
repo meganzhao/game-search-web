@@ -1,0 +1,93 @@
+<!--This is the basic template for the website-->
+<!--Author: Yitong Chen, Megan Zhao, Eva Zhong-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <div id="heading">
+            <meta charset="utf-8" content="width=device-width, initial-scale=1">
+            {% block title %}
+            {% endblock %}
+            <!--The Logo-->
+            <a href="{{ url_for('homepage')}}"><img class="displayed" src="{{ url_for('static', filename='logo.png')}}" alt="HTML5 Icon"
+            style="width:200px;max-width: 100%;height: auto;"></a>
+
+            {%  block stylesheet %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+            {% endblock %}
+            
+            {% block javascript %}
+            <script type="text/javascript" src="{{ url_for('static', filename='basic.js')}}"></script>
+            
+            <script type="text/javascript">
+                function globalSearchResult() {
+
+                    var search_result_url = "{{ url_for('searchResultbyName', search_key='NOTAKEY')}}";
+                    var search_input = document.getElementById("global_search");
+                    var result_url = search_result_url.replace('NOTAKEY', search_input.value);
+
+                    window.location = result_url;
+                }
+            </script>
+            
+            {% endblock %}
+            
+            {% block extra_javascript %}
+            {% endblock %}
+            
+            <!--The functions including log-in and search-->
+            {% block functions %}
+            <div id="functions_container">
+                <div id="login_container">
+                    <form action="{{ url_for('login')}}">
+                        <button type="submit" value="Log In">Log In</button>
+                    </form>
+                </div>
+                <div id="global_search_container">
+                    <button onclick="globalSearchResult()"  type="submit"
+                    style="width: 35px;height: 28px;border-radius: 5px;background: white; float: right; opacity: 0.9;"> 🔍
+                    </button>
+                    <input id="global_search" type="text" name="search" value=""
+                    style="float:right;width:150px;height: 20px;border-radius: 8px;opacity: 0.6; font-size: 14px;">
+                </div>
+            </div>
+            {% endblock %}
+            <!--Global Navigation-->
+            {% block global_navigation %}
+            <div id="global_nav">
+                <ul id="nav">
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Sports')}}">Sports</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Platform')}}">Platform</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Racing')}}">Racing</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Role-Playing')}}">Role-Playing</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Puzzle')}}">Puzzle</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Misc')}}">Misc</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Shooter')}}">Shooter</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Simulation')}}">Simulation</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Fighting')}}">Fighting</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Adventure')}}">Adventure</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Strategy')}}">Strategy</a></li>
+                    <li id="cat"><a href="{{ url_for('browse_by_genre', browse_key = 'Action')}}">Action</a></li>
+                </ul>
+            </div>
+            {% endblock %}
+        </div>
+    </head>
+
+    {% block head_style %}
+    {% endblock %}
+
+    <body background="{{ url_for('static', filename='universal_background.jpg')}}">
+        {% block content %}
+        {% endblock %}
+    </body>
+
+
+    <footer>
+        <div id="contact_developer">
+            <a href="mailto:zhaom@carleton.com?Subject=Help" target="_top"
+            style="font-size: 16px; color: black;text-align: center">Email Us With Any Questions</a>
+            {% block footer_msg %}
+            {% endblock %}
+        </div>
+    </footer>
+</html>

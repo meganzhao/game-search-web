@@ -1,0 +1,46 @@
+{% extends "basic.html" %}
+
+{% block title %}
+<title> Log In </title>
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='basic.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet_login.css')}}">
+{% endblock %}
+
+{% block functions %}
+        <script type="text/javascript">
+            function checkPassword() {
+                var nameInput = document.getElementById("username");
+                var url = "{{ url_for('accountHome', account_name='NOTANAME')}}";
+                var result = url.replace('NOTANAME', nameInput.value);
+                window.location = result;
+            }
+        </script>
+{% endblock %}
+<!--The log-in block-->
+
+{% block global_navigation %}
+{% endblock %}
+
+{% block content %}
+<div id="content">
+<form action="action_page.php">
+  <fieldset>
+    <legend>Log In</legend>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username"><br>
+      <label for="password">Password:</label><br>
+    <input type="password" id="password"><br>
+
+    <a id="forget_pass" href="forget_password.html">Forget Password?</a><br>
+
+      <button onclick="checkPassword()"> Sign In </button>
+    <br><br>
+      <button> Create Account </button>
+    <br>
+  </fieldset>
+</form>
+</div>
+{% endblock %}

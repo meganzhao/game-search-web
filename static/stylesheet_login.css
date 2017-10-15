@@ -1,0 +1,45 @@
+.displayed{
+    float: none;
+}
+
+fieldset {
+    padding: 1em;
+    font:90%/1 sans-serif;
+    border-width: 3px;
+    width: 40%;
+    margin:auto;
+  }
+
+label {
+  float:left;
+  width:35%;
+  margin-right:0.5em;
+  padding-top:0.2em;
+  text-align:right;
+  font-weight:bold;
+  }
+
+legend{
+    font-family: "sans-serif", Arial;
+	font-size: 22px;
+}
+
+input[type="text"]{
+    border-radius:5px;
+}
+
+button{
+    float: left;
+	font-size:20px;
+    width: 40%;
+	height: 30px;
+    margin-left:35%;
+}
+
+
+
+#forget_pass {
+	float: right;
+	font-size: 12px;
+    line-height: 20px;
+}
